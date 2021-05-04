@@ -4,7 +4,7 @@ import styles from './header.module.scss'
 export default function Header() {
   return(
     <header className={styles.postsHeader}>
-      <Link href="">
+      <Link href="/">
         <a>
           <img src="/Logo.svg" alt="logo"/>
         </a>
