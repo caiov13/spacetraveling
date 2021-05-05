@@ -79,12 +79,11 @@ export default function Post({post, navigation, preview}: PostProps): JSX.Elemen
 
   const isPostEdited = post.first_publication_date !== post.last_publication_date;
 
-  let issueDate;
-
+  let editionDate;
   if (isPostEdited) {
-    issueDate = format(
+    editionDate = format(
       new Date(post.last_publication_date),
-      "'* editado em' dd MMM yyyy', às' H':'mm",
+      "'* editado em' dd MMM yyyy', às' H':'m",
       {
         locale: ptBR,
       }
@@ -116,7 +115,7 @@ export default function Post({post, navigation, preview}: PostProps): JSX.Elemen
                   {`${readTime} min`}
                 </li>
                 </ul>
-                {isPostEdited && <span>{issueDate}</span>}
+                {isPostEdited && <span>{editionDate}</span>}
         </div>
 
         {post.data.content.map(content => {
